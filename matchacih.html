@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchacih - Cuma 10rb!</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {font-family: system-ui, sans-serif; background: #f0fff0; color: #222;}
+
+        header {
+            height: 100dvh; min-height: 100vh;
+            background: linear-gradient(135deg, #84cc76, #4ade80);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 20px;
+        }
+        .logo {font-size: 14vw; font-weight: 900; color: white; text-shadow: 0 10px 30px rgba(0,0,0,.4);}
+        .price {font-size: 15vw; font-weight: 900; color: #ff3366; text-shadow: 0 0 40px #ff3366;}
+        .kecil {font-size: 4.5vw; opacity: 0.9;}
+
+        .section {padding: 120px 10%; text-align: center; background: white;}
+        h2 {font-size: 4rem; color: #2e8b57; margin-bottom: 60px;}
+
+        /* SLIDER MANUAL SUPER SIMPLE & PASTI JALAN */
+        .slider-box {
+            max-width: 900px; margin: 0 auto; position: relative;
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .slides {
+            display: flex; transition: transform 0.6s ease;
+        }
+        .slide {
+            min-width: 100%; padding: 80px 40px; background: #fff; text-align: center;
+        }
+        .stars {color: #FFD700; font-size: 3.5rem; letter-spacing: 12px; margin-bottom: 20px;}
+        .slide p {font-size: 1.9rem; font-style: italic; color: #444; line-height: 1.8; margin: 30px 0;}
+        .slide .nama {font-size: 1.8rem; font-weight: 800; color: #2e8b57;}
+
+        /* PANAH KIRI KANAN */
+        .prev, .next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 50px; height: 50px; background: rgba(0,0,0,0.5);
+            color: white; font-size: 2.5rem; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; cursor: pointer; user-select: none;
+            transition: 0.3s;
+        }
+        .prev {left: 20px;}
+        .next {right: 20px;}
+        .prev:hover, .next:hover {background: #ff3366;}
+
+        /* DOTS BAWAH */
+        .dots {margin-top: 30px; text-align: center;}
+        .dot {
+            display: inline-block; width: 14px; height: 14px; background: #ccc;
+            border-radius: 50%; margin: 0 8px; cursor: pointer; transition: 0.4s;
+        }
+        .dot.active {background: #ff3366; transform: scale(1.4);}
+
+        .highlight {background: #ff3366; color: white; padding: 20px 60px; border-radius: 50px; font-weight: 900; font-size: 2rem; display: inline-block; margin: 40px 0;}
+        .btn {
+            display: inline-block; padding: 28px 110px; background: #ff3366; color: white;
+            text-decoration: none; border-radius: 50px; font-size: 2rem; font-weight: 900;
+            box-shadow: 0 20px 50px rgba(255,51,102,.5); transition: .4s;
+        }
+        .btn:hover {background: #ff0055; transform: scale(1.1);}
+        footer {background: #111; color: #aaa; padding: 80px 20px; text-align: center; font-size: 1.3rem;}
+
+        /* RESPONSIVE MOBILE - FIX KEPOTONG */
+        @media (max-width: 768px) {
+            .section {padding: 80px 5%;}
+            h2 {font-size: 2.5rem; margin-bottom: 40px;}
+            .logo {font-size: 12vw;}
+            .price {font-size: 13vw;}
+            .kecil {font-size: 4.5vw;}
+            .slide {padding: 50px 15px;}
+            .slide p {font-size: 1.4rem; margin: 20px 0;}
+            .stars {font-size: 2.4rem;}
+            .slide .nama {font-size: 1.4rem;}
+            .prev, .next {width: 40px; height: 40px; font-size: 2rem;}
+            .dot {width: 12px; height: 12px; margin: 0 6px;}
+            .highlight {padding: 15px 40px; font-size: 1.6rem;}
+            .btn {padding: 20px 80px; font-size: 1.6rem;}
+            footer {padding: 60px 15px; font-size: 1rem;}
+        }
+        @media (max-width: 480px) {
+            .section {padding: 60px 5%;}
+            h2 {font-size: 2rem;}
+            .logo {font-size: 10vw;}
+            .price {font-size: 11vw;}
+            .kecil {font-size: 4vw;}
+            .slide p {font-size: 1.2rem; line-height: 1.6;}
+            .stars {font-size: 2rem;}
+            .slide .nama {font-size: 1.2rem;}
+            .btn {padding: 18px 60px; font-size: 1.4rem;}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1 class="logo">MATCHACIH</h1>
+        <p style="font-size:6vw;font-weight:700;">Matcha Enak Banget</p>
+        <div class="price">10 RIBU</div>
+        <p class="kecil">beneran cuma 10k doang anjir</p>
+    </div>
+</header>
+
+<section class="section">
+    <h2>Matchacih 10rb-an</h2>
+    <p style="font-size:2rem;">Bukan dari Jepang, kita jujur aja wkwkwk<br>
+       Tapi ijo pekat, enak, nggak pait, cocok buat latte & story aesthetic!</p>
+    <p class="highlight">CUMA 10.000 AJA!</p>
+    <a href="https://wa.me/6285174296651?text=Bang,%20Matchacih%20nya%20masih%20ada?" class="btn">PESAN VIA WA SEKARANG</a>
+</section>
+
+<!-- SLIDER MANUAL + PANAH + DOTS -->
+<section class="section" style="background:#f9f9f9;padding-bottom:100px;">
+    <h2>Kata Orang-orang</h2>
+    
+    <div class="slider-box">
+        <div class="slides" id="slides">
+            <div class="slide">
+                <div class="stars">★★★★★</div>
+                <p>“Anakku tiap hari minta dibeliin matcha, katanya lebih enak dari yang di kafe. Padahal cuma 10ribu!”</p>
+                <div class="nama">– Mama Wiwi</div>
+            </div>
+            <div class="slide">
+                <div class="stars">★★★★★</div>
+                <p>“Gila sih, 10ribu doang tapi rasanya kaya 30ribu. Tiap hari aku beli buat sarapan!”</p>
+                <div class="nama">– Goodjays, Temen Sekelas</div>
+            </div>
+            <div class="slide">
+                <div class="stars">★★★★★</div>
+                <p>“Bapakku aja yang anti manis bilang ‘enak ini’, langsung habis setengah gelas wkwk”</p>
+                <div class="nama">– Toni, Anak SMA</div>
+            </div>
+        </div>
+
+        <!-- Panah -->
+        <div class="prev" onclick="changeSlide(-1)">❮</div>
+        <div class="next" onclick="changeSlide(1)">❯</div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</section>
+
+<section class="section">
+    <div style="font-size:5rem;line-height:2.2;">ENAK<br>MURAH<br>AESTHETIC</div>
+</section>
+
+<footer>
+    <p>© 2025 Matchacih — Matcha 10ribu yang bikin orang bilang "ANJIR SERIUS?!"</p>
+    <p>WA: 0851-7429-6651 (Neo) • 0851-9863-8685 (Alif)</p>
+</footer>
+
+<!-- JS SUPER RINGKAS BUAT SLIDER MANUAL -->
+<script>
+    let slideIndex = 1;
+    showSlide(slideIndex);
+
+    function changeSlide(n) {
+        showSlide(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlide(slideIndex = n);
+    }
+
+    function showSlide(n) {
+        let slides = document.getElementById("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > 3) slideIndex = 1;
+        if (n < 1) slideIndex = 3;
+        slides.style.transform = `translateX(-${(slideIndex-1)*100}%)`;
+        for(let i=0;i<dots.length;i++) dots[i].className = dots[i].className.replace(" active","");
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+
+</body>
+</html>
